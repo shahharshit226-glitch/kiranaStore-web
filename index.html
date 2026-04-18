@@ -1,0 +1,441 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mahajan Kirana Store | Trusted Kirana Shop in Biratnagar</title>
+<meta name="description" content="Mahajan Kirana Store is a trusted neighborhood kirana shop in Biratnagar. Browse products, check prices, and contact the owner for in-store purchase and custom orders.">
+<meta name="keywords" content="Mahajan Kirana Store, Kirana Store Biratnagar, Grocery Shop Biratnagar, Nepal Kirana, Daily Essentials, Wholesale Grocery">
+<meta name="author" content="Mahajan Kirana Store">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#0A4A2F">
+<link rel="canonical" href="index.html">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mahajan Kirana Store">
+<meta property="og:title" content="Mahajan Kirana Store | Trusted Kirana Shop in Biratnagar">
+<meta property="og:description" content="Trusted neighborhood kirana store in Biratnagar. Browse products and contact the owner for direct purchase.">
+<meta property="og:url" content="index.html">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mahajan Kirana Store | Trusted Kirana Shop in Biratnagar">
+<meta name="twitter:description" content="Browse products and contact Mahajan Kirana Store in Biratnagar for direct purchase.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=swap">
+
+<link rel="stylesheet" href="assets/css/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "GroceryStore",
+  "name": "Mahajan Kirana Store",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Biratnagar-16, Rani Mills Area, Bank Road",
+    "addressLocality": "Biratnagar",
+    "addressRegion": "Morang",
+    "addressCountry": "NP"
+  },
+  "telephone": "+9779811313232",
+  "email": "harshitshahaaai906@gmail.com",
+  "openingHours": "Mo-Su 10:00-17:00"
+}
+</script>
+</head>
+<body>
+
+<div id="nav">
+  <div class="logo-wrap" onclick="go('home')">
+    <div class="logo-sq">🌿</div>
+    <div>
+      <div class="logo-name">Mahajan Kirana</div>
+      <div class="logo-tag">Biratnagar · Est. 1980</div>
+    </div>
+  </div>
+  <div class="nav-sep"></div>
+  <div class="nav-tabs">
+    <button class="ntab on" onclick="go('home',this)">Home</button>
+    <button class="ntab" onclick="go('shop',this)">Shop</button>
+    <button class="ntab" onclick="go('about',this)">About</button>
+    <button class="ntab" onclick="go('contact',this)">Contact</button>
+  </div>
+  <div class="nav-r">
+    <div class="search-pill">🔍 <input id="searchInput" placeholder="Search products..." oninput="onSearch()"></div>
+    <button class="cartbtn" onclick="openCart()">🛒 Cart <span class="cbadge" id="cCount">0</span></button>
+  </div>
+</div>
+
+<!-- CART DRAWER -->
+<div class="overlay" id="overlay" onclick="closeCart()"></div>
+<div class="drawer" id="drawer">
+  <div class="dr-head">
+    <h2>🛒 Your Cart</h2>
+    <button class="dr-close" onclick="closeCart()">✕</button>
+  </div>
+  <div class="dr-body" id="drBody"></div>
+  <div class="dr-foot" id="drFoot" style="display:none">
+    <div class="dr-subtotal">
+      <span class="dr-subtotal-label">Order Total</span>
+      <span class="dr-subtotal-val" id="drTotal">NPR 0</span>
+    </div>
+    <div class="dr-delivery" id="drDelivery"></div>
+    <div class="order-section-label">Choose how to place your order</div>
+    <button class="obtn obtn-wa" onclick="placeOrder('wa')">💬 Order via WhatsApp</button>
+    <button class="obtn obtn-gm" onclick="placeOrder('gm')">✉️ Order via Gmail</button>
+    <button class="obtn obtn-ph" onclick="placeOrder('ph')">📞 Order via Phone Call</button>
+    <div class="dr-note">You'll see a preview of your order message before it's sent. You can edit it anytime.</div>
+  </div>
+</div>
+
+<!-- ORDER MODAL -->
+<div class="modal-wrap" id="modalWrap">
+  <div class="modal">
+    <div class="modal-icon" id="mIcon"></div>
+    <div class="modal-title" id="mTitle"></div>
+    <div class="modal-sub" id="mSub"></div>
+    <div class="modal-order-id" id="mOrderId"></div>
+    <div
+      style="font-size:.7rem;color:var(--t3);margin-bottom:.4rem;font-weight:600;text-transform:uppercase;letter-spacing:.07em">
+      📋 Your order message preview:</div>
+    <div class="modal-msg-preview" id="mPreview"></div>
+    <div class="modal-btns" id="mBtns"></div>
+  </div>
+</div>
+
+<div class="modal-wrap" id="detailWrap">
+  <div class="modal">
+    <div class="modal-icon" id="dIcon"></div>
+    <div class="modal-title" id="dTitle"></div>
+    <div class="detail-brand" id="dBrand"></div>
+    <div class="detail-meta" id="dMeta"></div>
+    <div class="detail-desc" id="dDesc"></div>
+    <div class="detail-price-grid">
+      <div class="detail-price-card">
+        <div class="detail-price-label">Retail Price</div>
+        <div class="detail-price-value" id="dRetail"></div>
+      </div>
+      <div class="detail-price-card">
+        <div class="detail-price-label">Wholesale Price</div>
+        <div class="detail-price-value" id="dWholesale"></div>
+      </div>
+    </div>
+    <div class="modal-btns">
+      <button class="modal-btn modal-btn-ph" id="dAddBtn">Add to Cart</button>
+      <button class="modal-btn modal-btn-wa" id="dAskBtn">Ask on WhatsApp</button>
+      <button class="modal-btn modal-btn-sec" onclick="closeProductDetail()">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- HOME PAGE -->
+<div class="pg on" id="pg-home">
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="hero-pill">📍 Biratnagar-16, Rani Mills Area, Bank Road</div>
+      <h1>Fresh Groceries,<br><i>Available In-Store</i> for You.</h1>
+      <p>Shop Smart. Live Better.</p>
+      <p>Mahajan Kirana Store — your trusted neighbourhood store since 1975. Order via WhatsApp, Gmail or Phone.
+        Serving Biratnagar with trusted kirana products.</p>
+      <div class="hero-btns">
+        <button class="hbtn hbtn-p" onclick="go('shop')">🛒 Shop Now</button>
+        <button class="hbtn hbtn-s" onclick="goWA('Hi, I want to know more about Mahajan Kirana Store!')">💬 WhatsApp
+          Us</button>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="hstat-n">50+</div>
+          <div class="hstat-l">Products</div>
+        </div>
+        <div>
+          <div class="hstat-n">3,000+</div>
+          <div class="hstat-l">Happy Customers</div>
+        </div>
+        <div>
+          <div class="hstat-n">In-Store</div>
+          <div class="hstat-l">Purchase</div>
+        </div>
+        <div>
+          <div class="hstat-n">10AM–5PM</div>
+          <div class="hstat-l">Open Daily</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-notice">
+    <strong>Important Notice:</strong> Home delivery is currently not enabled. Some products and prices shown on this website may not be fully listed or updated yet. Please use the Contact section to reach the owner and purchase directly from the physical shop. Full online ordering and delivery will be available soon.
+  </div>
+
+  <div class="ticker">
+    <div class="ticker-track">
+      <span class="ticker-item">📢 Home delivery is currently unavailable</span><span class="ticker-sep">◆</span>
+      <span class="ticker-item">🌾 Fresh produce every morning</span><span class="ticker-sep">◆</span>
+      <span class="ticker-item">🏪 Visit our physical shop for purchase</span><span class="ticker-sep">◆</span>
+      <span class="ticker-item">📱 WhatsApp order: +977 9811313232</span><span class="ticker-sep">◆</span>
+      <span class="ticker-item">📬 Use Contact section to reach owner</span><span class="ticker-sep">◆</span>
+      <span class="ticker-item">🌿 100% fresh & quality assured</span><span class="ticker-sep">◆</span>
+      <span class="ticker-item">📢 Home delivery is currently unavailable</span><span class="ticker-sep">◆</span>
+      <span class="ticker-item">🌾 Fresh produce every morning</span><span class="ticker-sep">◆</span>
+      <span class="ticker-item">🏪 Visit our physical shop for purchase</span><span class="ticker-sep">◆</span>
+      <span class="ticker-item">📱 WhatsApp order: +977 9811313232</span><span class="ticker-sep">◆</span>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-hd">
+      <div class="sec-title">Shop by <span>Category</span></div>
+      <div class="sec-link" onclick="go('shop')">View All →</div>
+    </div>
+    <div class="cat-row" id="homeCats"></div>
+    <div class="sec-hd" style="margin-top:.3rem">
+      <div class="sec-title">Featured <span>Products</span></div>
+      <div class="sec-link" onclick="go('shop')">See All →</div>
+    </div>
+    <div class="pgrid" id="featGrid"></div>
+  </div>
+
+  <div class="sec" style="padding-top:0">
+    <div class="sec-hd">
+      <div class="sec-title">🔥 Today's <span>Deals</span></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px">
+      <div style="background:linear-gradient(135deg,#0A4A2F,#1e8a55);border-radius:14px;padding:1.2rem;color:#fff">
+        <div
+          style="font-size:.67rem;font-weight:700;opacity:.65;text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px">
+          Flash Deal</div>
+        <div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;margin-bottom:4px">Top Staples
+          for Monthly Stock-Up</div>
+        <div style="font-size:.75rem;opacity:.75;margin-bottom:.9rem;line-height:1.45">Rice, atta, masoor dal and
+          chiura at everyday kirana rates.</div>
+        <button onclick="go('shop')"
+          style="background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.35);color:#fff;border-radius:7px;padding:5px 14px;font-size:.75rem;font-weight:600;cursor:pointer;font-family:'Sora',sans-serif">Shop
+          Now →</button>
+        <div
+          style="position:absolute;top:10px;right:10px;background:rgba(255,255,255,.18);border-radius:5px;padding:2px 8px;font-size:.62rem;color:#fff;font-weight:600">
+          TODAY</div>
+      </div>
+      <div style="background:linear-gradient(135deg,#92400E,#D97706);border-radius:14px;padding:1.2rem;color:#fff">
+        <div
+          style="font-size:.67rem;font-weight:700;opacity:.65;text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px">
+          Morning Fresh</div>
+        <div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;margin-bottom:4px">Staples and
+          Daily Essentials</div>
+        <div style="font-size:.75rem;opacity:.75;margin-bottom:.9rem;line-height:1.45">Rice, atta, dal, chiura and more
+          for everyday household needs.</div>
+        <button onclick="filterGo('staples')"
+          style="background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.35);color:#fff;border-radius:7px;padding:5px 14px;font-size:.75rem;font-weight:600;cursor:pointer;font-family:'Sora',sans-serif">Order
+          Fresh →</button>
+      </div>
+      <div style="background:linear-gradient(135deg,#1e3a6e,#2563EB);border-radius:14px;padding:1.2rem;color:#fff">
+        <div
+          style="font-size:.67rem;font-weight:700;opacity:.65;text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px">
+          Wholesale</div>
+        <div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;margin-bottom:4px">Bulk Orders —
+          Wholesale Support</div>
+        <div style="font-size:.75rem;opacity:.75;margin-bottom:.9rem;line-height:1.45">Approximate wholesale pricing is
+          available across staples, spices, dairy and household products.</div>
+        <button onclick="goWA('Hi, I want to enquire about bulk/wholesale pricing at Mahajan Kirana Store.')"
+          style="background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.35);color:#fff;border-radius:7px;padding:5px 14px;font-size:.75rem;font-weight:600;cursor:pointer;font-family:'Sora',sans-serif">Enquire
+          →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SHOP PAGE -->
+<div class="pg" id="pg-shop">
+  <div class="sec">
+    <div class="sec-hd">
+      <div class="sec-title">All <span>Products</span></div>
+      <div id="shopCount" style="font-size:.75rem;color:var(--t3);font-weight:500"></div>
+    </div>
+    <div class="cat-row" id="shopCats"></div>
+    <div class="pricing-note" id="pricingNote"></div>
+    <div class="pgrid" id="shopGrid"></div>
+  </div>
+</div>
+
+<!-- ABOUT PAGE -->
+<div class="pg" id="pg-about">
+  <div class="about-page">
+    <div class="about-hero-card">
+      <div class="about-kicker">🌿 Est. 1975 · Biratnagar, Nepal</div>
+      <div class="about-main-title">Three Generations. One <em>Unbreakable</em> Promise.</div>
+      <div class="about-hero-copy">Mahajan Kirana Store began with a simple idea: serve every family with honesty, fairness, and care. That same spirit still shapes everything we do today, from the shop counter to online ordering.</div>
+      <div class="about-pill-row">
+        <div class="about-pill">50 Years of Trust</div>
+        <div class="about-pill">Family-Run Since 1975</div>
+        <div class="about-pill">Serving Biratnagar Daily</div>
+      </div>
+    </div>
+
+    <div class="about-grid">
+      <div class="ccard">
+        <div class="ccard-title">Our Story</div>
+        <div class="about-card-copy">
+          <p>In 1975, <strong>Mahesh Shah</strong> started Mahajan Kirana as a small neighbourhood store built on hard work, honest pricing, and genuine customer care.</p>
+          <div class="about-highlight">"Every Customer is Family" is the founding belief that still guides the store.</div>
+          <p>Over time, <strong>Harendra Prasad Shah</strong> expanded the business, widened the product range, and built strong trust with families across Biratnagar.</p>
+          <p>Today, <strong>Harshit Shah</strong> is carrying that legacy forward online, making ordering faster and easier while keeping the same local warmth.</p>
+        </div>
+      </div>
+
+      <div class="ccard">
+        <div class="ccard-title">Our Journey</div>
+        <div class="about-timeline">
+          <div class="about-line">
+            <div class="about-line-year">1975 · The Beginning</div>
+            <div class="about-line-title">Mahesh Shah Opens the First Shop</div>
+            <div class="about-line-copy">A humble kirana counter with a promise of fair prices and respectful service.</div>
+          </div>
+          <div class="about-line">
+            <div class="about-line-year">1990s · Expansion</div>
+            <div class="about-line-title">Growing With the Community</div>
+            <div class="about-line-copy">The store expanded its range and became a daily stop for families across Biratnagar.</div>
+          </div>
+          <div class="about-line">
+            <div class="about-line-year">Today · Digital Era</div>
+            <div class="about-line-title">Mahajan Kirana Goes Online</div>
+            <div class="about-line-copy">The same trusted experience now continues through the website, cart, and WhatsApp ordering.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ccard">
+      <div class="ccard-title">Three Generations, One Store</div>
+      <div class="about-grid three">
+        <div class="about-person">
+          <div class="about-person-tag">Founder</div>
+          <div class="about-person-name">Mahesh Shah</div>
+          <div class="about-person-role">1st Generation · Est. 1975</div>
+          <div class="about-person-desc">Built the foundation of Mahajan Kirana with honesty, discipline, and care for every customer.</div>
+        </div>
+        <div class="about-person">
+          <div class="about-person-tag">Owner</div>
+          <div class="about-person-name">Harendra Prasad Shah</div>
+          <div class="about-person-role">2nd Generation · Current Owner</div>
+          <div class="about-person-desc">Expanded the store, strengthened community trust, and kept quality and pricing dependable.</div>
+        </div>
+        <div class="about-person">
+          <div class="about-person-tag">Digital</div>
+          <div class="about-person-name">Harshit Shah</div>
+          <div class="about-person-role">3rd Generation · Website Builder</div>
+          <div class="about-person-desc">Bringing the family business into the digital age while preserving the same local experience.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ccard">
+      <div class="ccard-title">What We Stand For</div>
+      <div class="about-grid three">
+        <div class="about-value">
+          <div class="about-value-title">Trust First</div>
+          <div class="about-value-desc">We keep our word and serve customers honestly.</div>
+        </div>
+        <div class="about-value">
+          <div class="about-value-title">Fair Prices</div>
+          <div class="about-value-desc">Families should always feel they are getting real value.</div>
+        </div>
+        <div class="about-value">
+          <div class="about-value-title">Fresh Quality</div>
+          <div class="about-value-desc">We stock what we would confidently bring to our own home.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ccard about-quote">
+      <div class="about-quote-text">"Every Customer is <em>Family</em>."</div>
+      <div class="about-quote-by">Mahesh Shah · Founder, Mahajan Kirana Store</div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT PAGE -->
+<div class="pg" id="pg-contact">
+  <div class="contact-wrap">
+    <div style="padding-top:.4rem;margin-bottom:1.1rem">
+      <div class="sec-title" style="font-size:1.3rem;margin-bottom:.3rem">Get in <span
+          style="color:var(--g2)">Touch</span></div>
+      <p style="font-size:.8rem;color:var(--t3);line-height:1.6">Visit us, call us, or order directly via WhatsApp or
+        email — we're always here for you.</p>
+    </div>
+    <div class="ccard">
+      <div class="ccard-title">🏪 Mahajan Kirana Store</div>
+      <div class="cinfo-row">
+        <div class="cinfo-ic">📍</div>
+        <div>
+          <div class="cinfo-lbl">Address</div>
+          <div class="cinfo-val">Biratnagar-16, Rani Mills Area, Bank Road, Morang, Nepal</div>
+        </div>
+      </div>
+      <div class="cinfo-row">
+        <div class="cinfo-ic">📞</div>
+        <div>
+          <div class="cinfo-lbl">Phone / WhatsApp</div>
+          <div class="cinfo-val">+977 9811313232</div>
+        </div>
+      </div>
+      <div class="cinfo-row">
+        <div class="cinfo-ic">✉️</div>
+        <div>
+          <div class="cinfo-lbl">Email</div>
+          <div class="cinfo-val">harshitshahaaai906@gmail.com</div>
+        </div>
+      </div>
+      <div class="cinfo-row">
+        <div class="cinfo-ic">🕐</div>
+        <div>
+          <div class="cinfo-lbl">Hours</div>
+          <div class="cinfo-val">10:00 AM – 5:00 PM · Open Every Day</div>
+        </div>
+      </div>
+      <div class="cinfo-row">
+        <div class="cinfo-ic">🚚</div>
+        <div>
+          <div class="cinfo-lbl">Delivery</div>
+          <div class="cinfo-val">Home delivery is currently unavailable. Please contact the owner and purchase from the physical shop.</div>
+        </div>
+      </div>
+    </div>
+    <div class="ccard">
+      <div class="ccard-title">📍 Our Location</div>
+      <div class="map-box">
+        <iframe class="map-frame"
+          src="https://www.google.com/maps?q=Mahajan%20Kirana%20Store%2C%20Biratnagar-16%2C%20Rani%20Mills%20Area%2C%20Bank%20Road%2C%20Morang%2C%20Nepal&output=embed"
+          title="Mahajan Kirana Store location map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen></iframe>
+      </div>
+      <div class="cbtn-row">
+        <button class="cbtn cbtn-map" onclick="openMap()">Open Map</button>
+        <button class="cbtn cbtn-wa" onclick="goWA('Hi, I want to visit or order from Mahajan Kirana Store!')">💬
+          WhatsApp</button>
+        <button class="cbtn cbtn-call" onclick="callStore()">📞 Call Now</button>
+        <button class="cbtn cbtn-mail" onclick="emailStore()">✉️ Email Us</button>
+      </div>
+    </div>
+    <div class="ccard">
+      <div class="ccard-title">📦 Place a Direct Order</div>
+      <p style="font-size:.78rem;color:var(--t3);margin-bottom:.9rem;line-height:1.55">Want to order without browsing?
+        Tell us what you need and we'll arrange it for you.</p>
+      <div class="cbtn-row" style="flex-direction:column">
+        <button class="cbtn cbtn-wa" style="width:100%"
+          onclick="goWA('Hi Mahajan Kirana, I want to place a custom order. Please help me!')">💬 Custom Order via
+          WhatsApp</button>
+        <button class="cbtn cbtn-mail" style="width:100%;margin-top:4px" onclick="emailDirectOrder()">✉️ Custom Order
+          via Email</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/script.js"></script>
+</body>
+</html>
+
+
