@@ -1567,6 +1567,168 @@
     font-weight: 700
   }
 
+  .info-page {
+    min-height: 100vh;
+    background:
+      radial-gradient(circle at top right, rgba(37, 168, 101, .11), transparent 42%),
+      radial-gradient(circle at bottom left, rgba(217, 119, 6, .1), transparent 38%),
+      var(--bg);
+  }
+
+  .info-shell {
+    max-width: 940px;
+    margin: 0 auto;
+    padding: 1.6rem 1.5rem 2.3rem;
+  }
+
+  .info-topnav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: .9rem;
+  }
+
+  .info-navlink {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    color: var(--g2);
+    font-size: .73rem;
+    font-weight: 700;
+    background: var(--bg2);
+    border: 1px solid var(--bdr);
+    border-radius: 999px;
+    padding: 6px 12px;
+    transition: all .15s;
+  }
+
+  .info-navlink:hover {
+    border-color: var(--g2);
+    background: var(--bg3);
+    color: var(--g1);
+  }
+
+  .info-card {
+    background: var(--bg2);
+    border: 1px solid var(--bdr);
+    border-radius: 16px;
+    padding: 1.35rem 1.4rem;
+    box-shadow: var(--sh);
+    margin-bottom: .95rem;
+  }
+
+  .info-h1 {
+    font-family: 'Playfair Display', serif;
+    margin: 0 0 .55rem;
+    font-size: clamp(1.35rem, 2.7vw, 2rem);
+    line-height: 1.2;
+    color: var(--t1);
+  }
+
+  .info-h2 {
+    font-family: 'Playfair Display', serif;
+    margin: 1rem 0 .45rem;
+    font-size: 1.08rem;
+    color: var(--t1);
+  }
+
+  .info-copy {
+    font-size: .82rem;
+    color: var(--t2);
+    line-height: 1.72;
+    margin-bottom: .35rem;
+  }
+
+  .info-list {
+    margin: .1rem 0 .35rem 1.1rem;
+    color: var(--t2);
+    font-size: .8rem;
+    line-height: 1.78;
+  }
+
+  .info-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 8px;
+    margin-top: .6rem;
+  }
+
+  .info-link-card {
+    display: block;
+    text-decoration: none;
+    color: var(--g2);
+    background: var(--bg2);
+    border: 1px solid var(--bdr);
+    border-radius: 10px;
+    padding: .62rem .72rem;
+    font-size: .76rem;
+    font-weight: 700;
+    transition: all .15s;
+  }
+
+  .info-link-card:hover {
+    border-color: var(--g2);
+    background: var(--bg3);
+    color: var(--g1);
+  }
+
+  .site-footer {
+    background: linear-gradient(135deg, #0d3d28, #14583a);
+    border-top: 1px solid rgba(255, 255, 255, .08);
+    margin-top: 1.5rem;
+    color: rgba(255, 255, 255, .85);
+  }
+
+  .site-footer-inner {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 1.25rem 1.5rem 1.35rem;
+  }
+
+  .site-footer-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.02rem;
+    margin-bottom: .22rem;
+    color: #fff;
+  }
+
+  .site-footer-sub {
+    font-size: .75rem;
+    color: rgba(255, 255, 255, .72);
+    margin-bottom: .7rem;
+    line-height: 1.55;
+  }
+
+  .site-footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: .55rem;
+  }
+
+  .site-footer-link {
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255, 255, 255, .08);
+    border: 1px solid rgba(255, 255, 255, .2);
+    border-radius: 999px;
+    padding: 6px 12px;
+    font-size: .73rem;
+    font-weight: 700;
+    transition: all .15s;
+  }
+
+  .site-footer-link:hover {
+    background: rgba(255, 255, 255, .16);
+    border-color: rgba(255, 255, 255, .38);
+  }
+
+  .site-footer-copy {
+    font-size: .7rem;
+    color: rgba(255, 255, 255, .64);
+  }
+
   @media(max-width:860px) {
     #nav {
       height: auto;
@@ -1615,7 +1777,8 @@
 
     .hero-inner,
     .contact-wrap,
-    .about-page {
+    .about-page,
+    .info-shell {
       max-width: none
     }
 
@@ -1625,7 +1788,9 @@
 
     .sec,
     .contact-wrap,
-    .about-page {
+    .about-page,
+    .info-shell,
+    .site-footer-inner {
       padding-left: 1.2rem;
       padding-right: 1.2rem
     }
@@ -1706,7 +1871,9 @@
 
     .sec,
     .contact-wrap,
-    .about-page {
+    .about-page,
+    .info-shell,
+    .site-footer-inner {
       padding: 1.2rem 1rem
     }
 
@@ -1783,6 +1950,14 @@
     .about-grid,
     .about-grid.three {
       grid-template-columns: 1fr
+    }
+
+    .info-card {
+      padding: 1rem;
+    }
+
+    .site-footer-links {
+      gap: 7px;
     }
   }
 
