@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Mahajan Kirana Store logo">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0A4A2F"/>
+      <stop offset="100%" stop-color="#2E7D32"/>
+    </linearGradient>
+    <linearGradient id="basket" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4C9E2F"/>
+      <stop offset="100%" stop-color="#2E7D32"/>
+    </linearGradient>
+    <linearGradient id="bagTop" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4A9A33"/>
+      <stop offset="100%" stop-color="#377B26"/>
+    </linearGradient>
+  </defs>
+  <circle cx="256" cy="256" r="246" fill="#fbfbf5" stroke="url(#g)" stroke-width="14"/>
+  <circle cx="256" cy="256" r="233" fill="none" stroke="#f0f4ed" stroke-width="2"/>
+
+  <path d="M109 397c15-54 58-99 109-118" fill="none" stroke="#2E7D32" stroke-width="14" stroke-linecap="round"/>
+  <path d="M403 397c-15-54-58-99-109-118" fill="none" stroke="#2E7D32" stroke-width="14" stroke-linecap="round"/>
+  <path d="M132 365c22-26 46-42 73-53" fill="none" stroke="#70b22f" stroke-width="13" stroke-linecap="round"/>
+  <path d="M380 365c-22-26-46-42-73-53" fill="none" stroke="#70b22f" stroke-width="13" stroke-linecap="round"/>
+  <path d="M132 366l-17 6c7-21 22-38 42-51z" fill="#2e7d32"/>
+  <path d="M380 366l17 6c-7-21-22-38-42-51z" fill="#2e7d32"/>
+
+  <path d="M256 80c-47 0-88 34-95 82" fill="none" stroke="#0A4A2F" stroke-width="16" stroke-linecap="round"/>
+  <path d="M256 80c47 0 88 34 95 82" fill="none" stroke="#0A4A2F" stroke-width="16" stroke-linecap="round"/>
+
+  <path d="M160 186h192l-20 154H180z" fill="url(#basket)"/>
+  <path d="M174 194h164l-16 132H190z" fill="url(#bagTop)"/>
+  <path d="M160 186h192l-12 18H172z" fill="#fbfbf5"/>
+  <path d="M160 186h192" stroke="#fbfbf5" stroke-width="7" stroke-linecap="round" stroke-dasharray="3 14"/>
+  <path d="M188 202h136l-10 114H198z" fill="#4d9b31" opacity="0.95"/>
+
+  <path d="M202 182c0-25 21-48 54-48 33 0 54 23 54 48" fill="none" stroke="#0A4A2F" stroke-width="14" stroke-linecap="round"/>
+  <path d="M256 126c0-4 3-7 7-7h2c4 0 7 3 7 7v40h-16z" fill="#1e88e5"/>
+
+  <text x="256" y="268" text-anchor="middle" font-family="Georgia, serif" font-size="100" font-weight="700" fill="#fbfbf5">M</text>
+  <path d="M245 264c-9 16-7 31 1 44" fill="none" stroke="#fbfbf5" stroke-width="6" stroke-linecap="round" opacity="0.85"/>
+  <path d="M268 265c8 14 7 29 0 41" fill="none" stroke="#fbfbf5" stroke-width="6" stroke-linecap="round" opacity="0.85"/>
+
+  <path d="M214 176c0-3 2-6 5-6h74c3 0 5 3 5 6v5H214z" fill="#f8d7a3" opacity="0.9"/>
+
+  <path d="M176 345h160" stroke="#2E7D32" stroke-width="4" opacity="0.35"/>
+  <path d="M180 350c0-5 4-9 9-9h144c5 0 9 4 9 9s-4 9-9 9H189c-5 0-9-4-9-9z" fill="#f7f4e7" stroke="#2E7D32" stroke-width="6"/>
+
+  <g transform="translate(0 0)">
+    <path d="M214 148c-19 14-32 31-38 52l18 16c5-16 13-28 27-39z" fill="#f4a000" opacity="0.95"/>
+    <path d="M298 147c19 14 32 31 38 52l-18 16c-5-16-13-28-27-39z" fill="#d63f2d" opacity="0.95"/>
+    <path d="M248 147c-8 13-11 28-9 43h34c2-15-1-30-9-43z" fill="#e7f2fb"/>
+    <path d="M245 143h24v20h-24z" fill="#2e92e6" rx="5"/>
+    <path d="M214 149l5-14h27l-2 16z" fill="#f7b400"/>
+    <path d="M298 149l-5-14h-27l2 16z" fill="#d63f2d"/>
+    <path d="M188 238c0-11 10-19 24-19 7 0 13 2 18 6 6-10 15-16 27-16 14 0 25 7 31 18 8-6 18-9 28-9 18 0 31 9 34 22-2 11-12 18-25 18H215c-15 0-27-8-27-20z" fill="#ef7b24" opacity="0.95"/>
+    <circle cx="210" cy="239" r="17" fill="#ef2f2f"/>
+    <circle cx="234" cy="232" r="17" fill="#f2c31b"/>
+    <circle cx="280" cy="234" r="17" fill="#f2c31b"/>
+    <path d="M206 228c3-7 8-12 15-15" fill="none" stroke="#0A4A2F" stroke-width="4" stroke-linecap="round"/>
+    <path d="M229 221c3-6 8-10 14-13" fill="none" stroke="#0A4A2F" stroke-width="4" stroke-linecap="round"/>
+    <path d="M278 221c4-7 10-11 18-14" fill="none" stroke="#0A4A2F" stroke-width="4" stroke-linecap="round"/>
+    <path d="M303 235c20 0 35 8 46 24" fill="none" stroke="#6aa82f" stroke-width="10" stroke-linecap="round"/>
+    <path d="M311 214c16 6 29 17 39 32" fill="none" stroke="#4e8f1f" stroke-width="10" stroke-linecap="round"/>
+  </g>
+
+  <path d="M112 263l26-4" fill="none" stroke="#2e7d32" stroke-width="8" stroke-linecap="round" opacity="0.7"/>
+  <path d="M400 263l-26-4" fill="none" stroke="#2e7d32" stroke-width="8" stroke-linecap="round" opacity="0.7"/>
+
+  <text x="256" y="365" text-anchor="middle" font-family="Georgia, serif" font-size="86" font-weight="700" fill="#0A4A2F" letter-spacing="1">MAHAJAN</text>
+  <text x="256" y="418" text-anchor="middle" font-family="Arial, sans-serif" font-size="31" font-weight="700" fill="#2e7d32" letter-spacing="4">KIRANA STORE</text>
+
+  <path d="M98 429h54" stroke="#2e7d32" stroke-width="5" stroke-linecap="round"/>
+  <path d="M360 429h54" stroke="#2e7d32" stroke-width="5" stroke-linecap="round"/>
+
+  <path d="M112 454c0 16 8 30 23 35h242c15-5 23-19 23-35v-13H112z" fill="#2e7d32"/>
+  <text x="159" y="477" text-anchor="middle" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#fbfbf5" letter-spacing="1">GOOD QUALITY</text>
+  <text x="353" y="477" text-anchor="middle" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#fbfbf5" letter-spacing="1">BEST PRICE</text>
+  <path d="M220 464h72" stroke="#fbfbf5" stroke-width="4" stroke-linecap="round"/>
+  <text x="256" y="500" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#f0d100" letter-spacing="4">BIRATNAGAR, NEPAL</text>
+</svg>
